@@ -5,7 +5,7 @@
   # manage.
   home.username = "chompou";
   home.homeDirectory = "/home/chompou";
-
+  
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -20,9 +20,12 @@
   home.packages = with pkgs; [
     hello
     kitty
-    vim
-    wget
-    curl
+    vivaldi
+    discord
+    emacs
+    steam
+    _1password-cli
+    _1password-gui
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -57,7 +60,8 @@
   #  /etc/profiles/per-user/chompou/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "emacs";
+    DOOM = "~/.config/emacs/bin";
   };
 
   programs.fish = {
@@ -66,6 +70,9 @@
       g = "git";
       "..." = "cd ../..";
     };
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
   };
 
   # Let Home Manager install and manage itself.
