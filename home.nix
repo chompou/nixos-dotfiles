@@ -5,7 +5,7 @@
   # manage.
   home.username = "chompou";
   home.homeDirectory = "/home/chompou";
-  
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -19,13 +19,15 @@
   # environment.
   home.packages = with pkgs; [
     hello
-    kitty
+    ghostty
     vivaldi
     discord
     emacs
     steam
     _1password-cli
     _1password-gui
+    wowup-cf
+    nixfmt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -61,7 +63,6 @@
   #
   home.sessionVariables = {
     EDITOR = "emacs";
-    DOOM = "~/.config/emacs/bin";
   };
 
   programs.fish = {

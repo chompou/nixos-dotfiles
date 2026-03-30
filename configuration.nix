@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.efi.canTouchEfiVariables = true;
@@ -40,7 +40,7 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  # Fish fish 
+  # Fish fish
   environment.shells = with pkgs; [ fish ];
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
@@ -80,7 +80,10 @@
   users.users.chompou = {
     isNormalUser = true;
     description = "Tobias";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
     ];
   };
@@ -88,7 +91,7 @@
   #Install nvidia drivers
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;  # see the note above
+  hardware.nvidia.open = true; # see the note above
 
   hardware.nvidia.powerManagement.enable = true;
 
@@ -109,6 +112,8 @@
     sbctl
     git
     efitools
+    btop
+    lutris
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -138,5 +143,8 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
