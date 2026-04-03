@@ -70,6 +70,7 @@
     shellAliases = {
       g = "git";
       "..." = "cd ../..";
+      doom = ".emacs.d/bin/doom";
     };
     interactiveShellInit = ''
       set fish_greeting

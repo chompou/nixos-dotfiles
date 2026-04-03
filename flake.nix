@@ -6,9 +6,6 @@
 
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    lanzaboote.url = "github:nix-community/lanzaboote";
-    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -16,7 +13,6 @@
       self,
       nixpkgs,
       home-manager,
-      lanzaboote,
       ...
     }:
     let
@@ -33,8 +29,7 @@
           inherit system;
           modules = [
             ./configuration.nix
-            lanzaboote.nixosModules.lanzaboote
-            ./modules/system/secureboot.nix
+            ./modules/system/boot.nix
           ];
         };
       };
