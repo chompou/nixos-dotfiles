@@ -114,9 +114,7 @@
     efitools
     btop
     lutris
-    easyeffects # Mic stuff
-    rnnoise # Mic stuff
-    deepfilternet # Mic stuff
+    easyeffects
   ];
 
   fonts.packages = with pkgs; [
