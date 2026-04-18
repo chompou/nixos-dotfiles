@@ -114,7 +114,6 @@
     efitools
     btop
     lutris
-    easyeffects
   ];
 
   fonts.packages = with pkgs; [

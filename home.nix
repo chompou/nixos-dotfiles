@@ -21,7 +21,7 @@
     hello
     ghostty
     vivaldi
-    discord
+    vesktop
     emacs
     steam
     _1password-cli
