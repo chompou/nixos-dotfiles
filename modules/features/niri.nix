@@ -19,16 +19,22 @@
     {
       packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
-        # settings = {
-        #   input.keyboard.xkb.layout = "no";
 
-        #   layout.gaps = 5;
+        settings = {
+          spawn-at-startup = [
+            (lib.getExe self'.packages.myNoctalia)
+          ];
 
-        #   binds = {
-        #     "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
-        #     "Mod+Q".close-window = null;
-        #   };
-        # };
+          xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+          input.keyboard.xkb.layout = "no";
+
+          layout.gaps = 5;
+
+          binds = {
+            "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
+          };
+        };
       };
     };
 }

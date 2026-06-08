@@ -13,6 +13,7 @@
         self.nixosModules.silverpineHardware
         self.nixosModules.silverpineBoot
         self.nixosModules.niri
+        self.nixosModules.users
       ];
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
