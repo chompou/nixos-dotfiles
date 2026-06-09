@@ -15,8 +15,6 @@
         "networkmanager"
         "wheel"
       ];
-      packages = with pkgs; [
-      ];
     };
 
     users.groups.nixosvmtest = { };

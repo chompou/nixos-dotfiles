@@ -53,17 +53,6 @@
 
       };
 
-      users.users.chompou = {
-        isNormalUser = true;
-        description = "Tobias";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-        ];
-        packages = with pkgs; [
-        ];
-      };
-
       hardware.graphics.enable = true;
       services.xserver.videoDrivers = [ "nvidia" ];
       hardware.nvidia.open = true;
@@ -88,6 +77,7 @@
         lutris
         prismlauncher
         qbz
+        vivaldi
       ];
 
       fonts.packages = with pkgs; [
