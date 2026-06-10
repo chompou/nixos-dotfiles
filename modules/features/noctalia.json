@@ -5,17 +5,17 @@
       "barType": "floating",
       "position": "top",
       "monitors": [],
-      "density": "default",
+      "density": "compact",
       "showOutline": false,
       "showCapsule": true,
-      "capsuleOpacity": 0.8200000000000001,
+      "capsuleOpacity": 1,
       "capsuleColorKey": "none",
       "widgetSpacing": 6,
       "contentPadding": 2,
       "fontScale": 1,
       "enableExclusionZoneInset": true,
-      "backgroundOpacity": 0.93,
-      "useSeparateOpacity": false,
+      "backgroundOpacity": 0,
+      "useSeparateOpacity": true,
       "marginVertical": 4,
       "marginHorizontal": 4,
       "frameThickness": 8,
@@ -672,28 +672,44 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "winit": "/nix/store/wp0kv9bbq8w0k4pzbr7g9yy52nbhfm6c-noctalia-shell-4.7.7/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
+      "DP-1": "/nix/store/wp0kv9bbq8w0k4pzbr7g9yy52nbhfm6c-noctalia-shell-4.7.7/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
+      "DP-2": "/nix/store/wp0kv9bbq8w0k4pzbr7g9yy52nbhfm6c-noctalia-shell-4.7.7/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "winit": {
-        "name": "winit",
+      "DP-1": {
+        "name": "DP-1",
         "connected": true,
         "scale": 1,
-        "width": 1280,
-        "height": 800,
-        "x": 0,
+        "width": 1080,
+        "height": 1920,
+        "x": 1920,
         "y": 0,
-        "physical_width": 0,
-        "physical_height": 0,
-        "refresh_rate": 60000,
+        "physical_width": 530,
+        "physical_height": 300,
+        "refresh_rate": 143981,
+        "vrr_supported": true,
+        "vrr_enabled": false,
+        "transform": "90"
+      },
+      "DP-2": {
+        "name": "DP-2",
+        "connected": true,
+        "scale": 1,
+        "width": 1920,
+        "height": 1080,
+        "x": 0,
+        "y": 540,
+        "physical_width": 540,
+        "physical_height": 300,
+        "refresh_rate": 239760,
         "vrr_supported": false,
         "vrr_enabled": false,
-        "transform": "Flipped180"
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 0
+      "lastSeenTs": 1780995576000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
