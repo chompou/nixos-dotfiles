@@ -16,15 +16,6 @@
         "wheel"
       ];
     };
-
-    users.groups.nixosvmtest = { };
-    users.users.nixosvmtest = {
-      isNormalUser = true;
-      initialPassword = "test";
-      group = "nixosvmtest";
-    };
-    users.groups.nixosvmtest = { };
-
   };
 
 }

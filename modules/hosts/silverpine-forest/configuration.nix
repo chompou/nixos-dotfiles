@@ -78,6 +78,7 @@
         prismlauncher
         qbz
         vivaldi
+        fastfetch
       ];
 
       fonts.packages = with pkgs; [

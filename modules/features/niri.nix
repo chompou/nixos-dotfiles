@@ -28,7 +28,17 @@
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
-          input.keyboard.xkb.layout = "no";
+          input = {
+            keyboard = {
+              xkb.layout = "no";
+            };
+            mouse = {
+              accel-profile = "flat";
+              accel-speed = 0.0;
+            };
+          };
+
+          prefer-no-csd = true;
 
           layout = {
             preset-column-widths = [
@@ -48,7 +58,7 @@
             }
             {
               matches = [
-                { is-active = true; }
+                { is-active = false; }
               ];
               opacity = 0.96;
             }
@@ -56,7 +66,7 @@
               matches = [
                 { app-id = ".*"; }
               ];
-              geometry-corner-radius = 20;
+              geometry-corner-radius = 10;
               clip-to-geometry = true;
             }
           ];
@@ -93,7 +103,7 @@
             # "Mod+G".spawn-sh = lib.getExe pkgs.vivaldi;
 
             "Mod+Q".close-window = _: { };
-            "Mod+F".fullscreen-window = _: { };
+            "Mod+F".maximize-column = _: { };
             "Mod+Shift+F".toggle-window-floating = _: { };
             "Mod+C".center-column = _: { };
 
