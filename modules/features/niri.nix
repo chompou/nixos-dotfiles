@@ -100,12 +100,14 @@
           binds = {
             "Mod+T".spawn-sh = lib.getExe pkgs.ghostty;
             "Super+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-            # "Mod+G".spawn-sh = lib.getExe pkgs.vivaldi;
+            "Mod+G".spawn-sh = "vivaldi";
 
             "Mod+Q".close-window = _: { };
             "Mod+F".maximize-column = _: { };
             "Mod+Shift+F".toggle-window-floating = _: { };
             "Mod+C".center-column = _: { };
+
+            "Mod+Shift+S".screenshot = _: { };
 
             "Mod+H".focus-column-left = _: { };
             "Mod+L".focus-column-right = _: { };
