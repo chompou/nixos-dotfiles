@@ -101,6 +101,7 @@
             "Mod+T".spawn-sh = lib.getExe pkgs.ghostty;
             "Super+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             "Mod+G".spawn-sh = "vivaldi";
+            "Mod+E".spawn-sh = lib.getExe pkgs.emacs;
 
             "Mod+Q".close-window = _: { };
             "Mod+F".maximize-column = _: { };
