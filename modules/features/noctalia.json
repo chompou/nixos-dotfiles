@@ -336,7 +336,7 @@
       "monitorDirectories": [],
       "enableMultiMonitorDirectories": false,
       "showHiddenFiles": false,
-      "viewMode": "single",
+      "viewMode": "recursive",
       "setWallpaperOnAllMonitors": true,
       "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
@@ -862,7 +862,33 @@
       "overviewEnabled": true,
       "gridSnap": false,
       "gridSnapScale": false,
-      "monitorWidgets": []
+      "monitorWidgets": [
+        {
+          "name": "DP-2",
+          "widgets": [
+            {
+              "defaultSettings": {
+                "barWidth": 0.6,
+                "bloomIntensity": 0.5,
+                "customPrimaryColor": "#6750A4",
+                "customSecondaryColor": "#625B71",
+                "fadeWhenIdle": false,
+                "innerDiameter": 0.7,
+                "ringOpacity": 0.8,
+                "rotationSpeed": 0.5,
+                "sensitivity": 1.5,
+                "useCustomColors": false,
+                "visualizationMode": 3,
+                "waveThickness": 1
+              },
+              "id": "plugin:fancy-audiovisualizer",
+              "showBackground": true,
+              "x": 150,
+              "y": 150
+            }
+          ]
+        }
+      ]
     }
   },
   "state": {
@@ -872,8 +898,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/nix/store/wp0kv9bbq8w0k4pzbr7g9yy52nbhfm6c-noctalia-shell-4.7.7/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
-      "DP-2": "/nix/store/wp0kv9bbq8w0k4pzbr7g9yy52nbhfm6c-noctalia-shell-4.7.7/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
+      "DP-1": "/home/chompou/Pictures/Wallpapers/walls/urban/AirplaneCat.jpg",
+      "DP-2": "/home/chompou/Pictures/Wallpapers/walls/urban/AirplaneCat.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
