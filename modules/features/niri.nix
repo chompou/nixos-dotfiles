@@ -105,8 +105,9 @@
 
             "Mod+Q".close-window = _: { };
             "Mod+F".maximize-column = _: { };
-            "Mod+Shift+F".toggle-window-floating = _: { };
+            "Mod+Shift+F".fullscreen-window = _: { };
             "Mod+C".center-column = _: { };
+            "Mod+Ctrl+F".toggle-window-floating = _: { };
 
             "Mod+Shift+S".screenshot = _: { };
 
