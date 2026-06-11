@@ -14,6 +14,8 @@
         self.nixosModules.silverpineBoot
         self.nixosModules.niri
         self.nixosModules.users
+        # self.nixosModules.fish
+        # self.nixosModules.nvidia
       ];
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -79,10 +81,13 @@
         qbz
         vivaldi
         fastfetch
+        starship
       ];
 
       fonts.packages = with pkgs; [
         nerd-fonts.fira-code
+        nerd-fonts.caskaydia-cove
+        inter
       ];
 
       programs.nh = {
