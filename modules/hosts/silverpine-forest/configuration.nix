@@ -63,6 +63,8 @@
 
       programs.steam.enable = true;
 
+      programs.kdeconnect.enable = true;
+
       nixpkgs.config.allowUnfree = true;
 
       environment.systemPackages = with pkgs; [
