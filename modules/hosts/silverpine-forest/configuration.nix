@@ -62,6 +62,7 @@
       hardware.nvidia.powerManagement.enable = true;
 
       programs.steam.enable = true;
+      programs.gamemode.enable = true;
 
       programs.kdeconnect.enable = true;
 
@@ -69,21 +70,23 @@
 
       environment.systemPackages = with pkgs; [
         vim
+        fastfetch
+        starship
+        jujutsu
         wget
-        coreutils
         ripgrep
+        coreutils
         fd
         clang
         sbctl
         git
         efitools
         btop
+
         lutris
         prismlauncher
         qbz
         vivaldi
-        fastfetch
-        starship
       ];
 
       fonts.packages = with pkgs; [
