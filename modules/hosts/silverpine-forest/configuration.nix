@@ -93,6 +93,7 @@
         nerd-fonts.fira-code
         nerd-fonts.caskaydia-cove
         inter
+	nerd-fonts.jetbrains-mono
       ];
 
       programs.nh = {
