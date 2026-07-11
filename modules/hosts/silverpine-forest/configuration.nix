@@ -82,6 +82,7 @@
         git
         efitools
         btop
+        cmake
 
         lutris
         prismlauncher
@@ -93,7 +94,7 @@
         nerd-fonts.fira-code
         nerd-fonts.caskaydia-cove
         inter
-	nerd-fonts.jetbrains-mono
+        nerd-fonts.jetbrains-mono
       ];
 
       programs.nh = {
