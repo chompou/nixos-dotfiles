@@ -1,12 +1,22 @@
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  ...
+}:
 {
   flake.nixosModules.niri =
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      ...
+    }:
     {
       programs.niri = {
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
+
+      services.displayManager.defaultSession = "niri";
     };
 
   perSystem =
@@ -24,6 +34,7 @@
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
             (lib.getExe pkgs.vesktop)
+            # (lib.getExe pkgs._1password-cli)
           ];
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
@@ -101,7 +112,7 @@
             "Mod+T".spawn-sh = lib.getExe pkgs.ghostty;
             "Super+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             "Mod+G".spawn-sh = "vivaldi";
-            "Mod+E".spawn-sh = lib.getExe pkgs.emacs;
+            "Mod+E".spawn-sh = "emacs";
 
             "Mod+Q".close-window = _: { };
             "Mod+F".maximize-column = _: { };

@@ -14,6 +14,7 @@
         self.nixosModules.silverpineBoot
         self.nixosModules.niri
         self.nixosModules.users
+        # self.nixosModules._1password
         # self.nixosModules.fish
         # self.nixosModules.nvidia
       ];
@@ -36,6 +37,24 @@
       users.defaultUserShell = pkgs.fish;
       programs.fish.enable = true;
 
+      nixpkgs.config.allowUnfree = true;
+
+      programs = {
+        _1password.enable = true;
+        _1password-gui = {
+          enable = true;
+          polkitPolicyOwners = [ "chompou" ];
+        };
+      };
+      environment.etc = {
+        "1password/custom_allowed_browsers" = {
+          text = ''
+            vivaldi-bin
+          '';
+          mode = "0755";
+        };
+      };
+
       services.xserver.xkb = {
         layout = "no";
         variant = "";
@@ -46,7 +65,10 @@
       services.printing.enable = true;
 
       services.pulseaudio.enable = false;
+
       security.rtkit.enable = true;
+      security.polkit.enable = true;
+
       services.pipewire = {
         enable = true;
         alsa.enable = true;
@@ -66,8 +88,6 @@
 
       programs.kdeconnect.enable = true;
 
-      nixpkgs.config.allowUnfree = true;
-
       environment.systemPackages = with pkgs; [
         vim
         fastfetch
@@ -83,11 +103,13 @@
         efitools
         btop
         cmake
+        python3
 
         lutris
         prismlauncher
         qbz
         vivaldi
+        pinta
       ];
 
       fonts.packages = with pkgs; [
