@@ -3,6 +3,8 @@
   flake.nixosModules.fish =
     { pkgs, lib, ... }:
     {
+      imports = [ self.nixosModules.starship ];
+
       programs.fish = {
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myFish;

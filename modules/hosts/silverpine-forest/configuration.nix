@@ -15,8 +15,9 @@
         self.nixosModules.niri
         self.nixosModules.users
         # self.nixosModules._1password
-        # self.nixosModules.fish
+        self.nixosModules.fish
         # self.nixosModules.nvidia
+        inputs.hjem.nixosModules.default
       ];
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -83,6 +84,8 @@
 
       hardware.nvidia.powerManagement.enable = true;
 
+      hardware.opentabletdriver.enable = true;
+
       programs.steam.enable = true;
       programs.gamemode.enable = true;
 
@@ -104,10 +107,11 @@
         btop
         cmake
         python3
+        godot
 
+        osu-lazer-bin
         lutris
         prismlauncher
-        qbz
         vivaldi
         pinta
       ];
