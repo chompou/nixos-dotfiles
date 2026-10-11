@@ -82,6 +82,7 @@
         python3
         godot
         nixd
+        aspell
 
         osu-lazer-bin
         lutris
