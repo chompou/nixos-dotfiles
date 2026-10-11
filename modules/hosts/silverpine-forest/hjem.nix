@@ -4,12 +4,9 @@
   ...
 }:
 {
-  hjem.users.chompou = {
-    directory = "/home/chompou";
-    files = {
-      ".config/jj/config.toml" = {
-        source = path: ../../features/jujutsu.toml;
-      };
+  flake.nixosModules.silverpineHjem = {
+    hjem.users.chompou = {
+      directory = "/home/chompou";
     };
   };
 }

@@ -14,10 +14,11 @@
         self.nixosModules.silverpineBoot
         self.nixosModules.niri
         self.nixosModules.users
-        # self.nixosModules._1password
+        self.nixosModules.passwordManager
         self.nixosModules.fish
         # self.nixosModules.nvidia
-        inputs.hjem.nixosModules.default
+        self.nixosModules.silverpineHjem
+        self.nixosModules.ghostty
       ];
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
