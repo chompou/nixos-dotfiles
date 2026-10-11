@@ -7,7 +7,7 @@
 
 {
 
-  flake.nixosModules.silverpineNvidia = {
+  flake.nixosModules.nvidia = {
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware = {
       nvidia = {

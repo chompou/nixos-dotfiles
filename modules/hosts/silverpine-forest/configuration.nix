@@ -16,7 +16,7 @@
         self.nixosModules.users
         self.nixosModules.passwordManager
         self.nixosModules.fish
-        # self.nixosModules.nvidia
+        self.nixosModules.nvidia
         self.nixosModules.silverpineHjem
         self.nixosModules.ghostty
       ];
@@ -58,12 +58,6 @@
         pulse.enable = true;
 
       };
-
-      hardware.graphics.enable = true;
-      services.xserver.videoDrivers = [ "nvidia" ];
-      hardware.nvidia.open = true;
-
-      hardware.nvidia.powerManagement.enable = true;
 
       hardware.opentabletdriver.enable = true;
 
