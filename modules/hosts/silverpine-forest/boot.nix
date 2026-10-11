@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
+{ ... }:
 {
   flake.nixosModules.silverpineBoot = {
 

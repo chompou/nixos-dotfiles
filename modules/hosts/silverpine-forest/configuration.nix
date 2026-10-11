@@ -1,11 +1,9 @@
-{ self, inputs, ... }:
+{ self, ... }:
 
 {
   flake.nixosModules.silverpineConfiguration =
     {
       pkgs,
-      lib,
-      config,
       ...
     }:
     {
@@ -83,6 +81,7 @@
         cmake
         python3
         godot
+        nixd
 
         osu-lazer-bin
         lutris
@@ -112,6 +111,5 @@
         "nix-command"
         "flakes"
       ];
-
     };
 }

@@ -1,11 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
-
+{ ... }:
 {
   flake.nixosModules.users = {
     users.users.chompou = {

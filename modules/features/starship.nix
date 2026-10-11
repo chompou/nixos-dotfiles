@@ -5,6 +5,6 @@
     {
       programs.starship.enable = true;
 
-      hjem.users.chompou.files.".config/starship.toml".source = ./starship/tokyo-night.toml;
+      hjem.users.chompou.xdg.config.files."starship.toml".source = ./starship/tokyo-night.toml;
     };
 }

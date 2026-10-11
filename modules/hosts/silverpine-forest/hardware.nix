@@ -1,16 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ ... }:
 
 {
   flake.nixosModules.silverpineHardware =
     {
       config,
       lib,
-      pkgs,
       modulesPath,
       ...
     }:

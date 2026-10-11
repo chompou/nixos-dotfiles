@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ ... }:
 {
   flake.nixosModules.silverpineHjem = {
     hjem.users.chompou = {

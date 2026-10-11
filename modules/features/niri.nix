@@ -7,7 +7,6 @@
   flake.nixosModules.niri =
     {
       pkgs,
-      lib,
       ...
     }:
     {
@@ -34,7 +33,6 @@
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
             (lib.getExe pkgs.vesktop)
-            # (lib.getExe pkgs._1password-cli)
           ];
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
