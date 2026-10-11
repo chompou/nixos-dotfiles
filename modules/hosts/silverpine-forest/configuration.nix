@@ -35,10 +35,6 @@
       services.displayManager.sddm.enable = true;
       services.desktopManager.plasma6.enable = true;
 
-      environment.shells = with pkgs; [ fish ];
-      users.defaultUserShell = pkgs.fish;
-      programs.fish.enable = true;
-
       nixpkgs.config.allowUnfree = true;
 
       services.xserver.xkb = {

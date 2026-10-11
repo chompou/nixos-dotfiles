@@ -696,7 +696,7 @@
           "id": "discord"
         },
         {
-          "enabled": true,
+          "enabled": false,
           "id": "starship"
         },
         {

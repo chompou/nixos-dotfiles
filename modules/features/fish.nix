@@ -1,27 +1,13 @@
-{ self, inputs, ... }:
+{ self, ... }:
 {
   flake.nixosModules.fish =
-    { pkgs, lib, ... }:
+    { config, ... }:
     {
       imports = [ self.nixosModules.starship ];
 
-      programs.fish = {
-        enable = true;
-        package = self.packages.${pkgs.stdenv.hostPlatform.system}.myFish;
-      };
-    };
+      programs.fish.enable = true;
 
-  perSystem =
-    {
-      pkgs,
-      lib,
-      self',
-      ...
-    }:
-    {
-      packages.myFish = inputs.wrapper-modules.wrappers.fish.wrap {
-        inherit pkgs;
-
-      };
+      environment.shells = [ config.programs.fish.package ];
+      users.defaultUserShell = config.programs.fish.package;
     };
 }

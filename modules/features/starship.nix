@@ -3,9 +3,8 @@
   flake.nixosModules.starship =
     { ... }:
     {
-      programs.starship = {
-        enable = true;
-        settings = builtins.fromTOML (builtins.readFile ./starship/tokyo-night.toml);
-      };
+      programs.starship.enable = true;
+
+      hjem.users.chompou.files.".config/starship.toml".source = ./starship/tokyo-night.toml;
     };
 }
