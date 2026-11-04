@@ -16,6 +16,7 @@
 
         users.chompou.programs.noctalia = {
           enable = true;
+          validateConfig = true;
 
           settings = {
             bar = {
@@ -25,7 +26,6 @@
                 background_opacity = 0.66999995708465576;
                 capsule_opacity = 0.0;
                 center = [
-                  "active_window"
                   "media"
                 ];
                 contact_shadow = true;
@@ -42,11 +42,10 @@
                 ];
                 margin_edge = 5;
                 margin_ends = 0;
-                padding = 12;
+                padding = 15;
                 reserve_space = true;
-                scale = 1.2000000476837158;
+                scale = 1.0;
                 start = [
-                  "launcher"
                   "taskbar"
                 ];
                 thickness = 31;
@@ -206,7 +205,7 @@
               screen_time_enabled = true;
               settings_show_advanced = true;
               telemetry_enabled = true;
-              time_format = "{:%-I:%M %p}";
+              time_format = "{:%H:%M}";
 
               panel = {
                 control_center_placement = "floating";
@@ -279,39 +278,41 @@
 
             weather = { };
 
-            clock = {
-              format = "{:%a, %b %-d  %-I:%M %p }";
-              vertical_format = "{:%a, %b %-d \\n %-I:%M %p }";
-            };
+            widget = {
 
-            cpu = {
-              show_value = false;
-            };
+              clock = {
+                format = "{:%-d. %b %H:%M }";
+              };
 
-            input_volume = {
-              show_label = false;
-            };
+              cpu = {
+                show_value = false;
+              };
 
-            network = {
-              show_label = false;
-              vpn_status = "both";
-            };
+              input_volume = {
+                show_label = false;
+              };
 
-            ram = {
-              show_value = false;
-            };
+              network = {
+                show_label = false;
+                vpn_status = "both";
+              };
 
-            taskbar = {
-              group_by_workspace = true;
-              workspace_label_placement = "centered";
-            };
+              ram = {
+                show_value = false;
+              };
 
-            temp = {
-              show_value = false;
-            };
+              taskbar = {
+                group_by_workspace = true;
+                workspace_label_placement = "centered";
+              };
 
-            volume = {
-              show_label = false;
+              temp = {
+                show_value = false;
+              };
+
+              volume = {
+                show_label = false;
+              };
             };
           };
         };

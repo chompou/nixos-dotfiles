@@ -21,24 +21,25 @@ let
   };
 
   baseKeybinds = {
-    "Mod+T" = "spawn:ghostty";
-    "Mod+E" = "spawn:emacs";
-    "Mod+G" = "spawn:vivaldi";
+    "Mod+T" = "spawn ghostty";
+    "Mod+E" = "spawn emacs";
+    "Mod+G" = "spawn vivaldi";
     "Mod+Space" = "window-toggle-floating";
-    "Mod+Shift+S" = "spawn:noctalia msg screenshot-region";
-    "Mod+Escape" = "spawn:noctalia msg panel-toggle session";
+    "Mod+Shift+S" = "spawn noctalia msg screenshot-region";
+    "Mod+Shift+F" = "window-toggle-fullscreen";
+    "Mod+Escape" = "spawn noctalia msg panel-toggle session";
     "Mod+MouseMiddle" = {
       action = "overview-toggle";
       repeat = false;
     };
-    "Mod+W" = "spawn:noctalia msg panel-toggle wallpaper";
-    "Mod+D" = "spawn:noctalia msg panel-toggle launcher";
-    "Mod+Z" = "spawn:noctalia msg panel-toggle launcher /emo";
-    "Mod+V" = "spawn:noctalia msg panel-toggle clipboard";
-    "Mod+X" = "spawn:noctalia msg bar-toggle";
-    "Mod+Shift+W" = "spawn:noctalia msg desktop-widgets-toggle-edit";
-    "Mod+Shift+T" = "spawn:noctalia msg panel-toggle test";
-    "Mod+Shift+E" = "session-quit:skip-confirmation";
+    "Mod+W" = "spawn noctalia msg panel-toggle wallpaper";
+    "Mod+D" = "spawn noctalia msg panel-toggle launcher";
+    "Mod+Z" = "spawn noctalia msg panel-toggle launcher /emo";
+    "Mod+V" = "spawn noctalia msg panel-toggle clipboard";
+    "Mod+X" = "spawn noctalia msg bar-toggle";
+    "Mod+Shift+W" = "spawn noctalia msg desktop-widgets-toggle-edit";
+    "Mod+Shift+T" = "spawn noctalia msg panel-toggle test";
+    "Mod+Shift+E" = "session-quit skip-confirmation";
     "Mod+Q" = {
       action = "window-close";
       repeat = false;
@@ -48,9 +49,9 @@ let
       repeat = false;
     };
     "Mod+R" = "window-cycle-primary-extent";
-    "Mod+A" = "window-set-primary-extent:0.333";
-    "Mod+S" = "window-set-primary-extent:0.5";
-    "Mod+F" = "window-set-primary-extent:1.0";
+    "Mod+A" = "window-set-primary-extent 0.333";
+    "Mod+S" = "window-set-primary-extent 0.5";
+    "Mod+F" = "window-set-primary-extent 1.0";
     "Mod+Left" = "window-focus-left";
     "Mod+Down" = "window-focus-down";
     "Mod+Up" = "window-focus-up";
@@ -73,25 +74,25 @@ let
     "Mod+Ctrl+J" = "output-focus-down";
     "Mod+Ctrl+K" = "output-focus-up";
     "Mod+Ctrl+L" = "output-focus-right";
-    "Mod+1" = "workspace-switch:1";
-    "Mod+2" = "workspace-switch:2";
-    "Mod+3" = "workspace-switch:3";
-    "Mod+4" = "workspace-switch:4";
-    "Mod+5" = "workspace-switch:5";
-    "Mod+6" = "workspace-switch:6";
-    "Mod+7" = "workspace-switch:7";
-    "Mod+8" = "workspace-switch:8";
-    "Mod+9" = "workspace-switch:9";
+    "Mod+1" = "workspace-switch 1";
+    "Mod+2" = "workspace-switch 2";
+    "Mod+3" = "workspace-switch 3";
+    "Mod+4" = "workspace-switch 4";
+    "Mod+5" = "workspace-switch 5";
+    "Mod+6" = "workspace-switch 6";
+    "Mod+7" = "workspace-switch 7";
+    "Mod+8" = "workspace-switch 8";
+    "Mod+9" = "workspace-switch 9";
 
-    "Mod+Shift+1" = "window-move-to-workspace:1";
-    "Mod+Shift+2" = "window-move-to-workspace:2";
-    "Mod+Shift+3" = "window-move-to-workspace:3";
-    "Mod+Shift+4" = "window-move-to-workspace:4";
-    "Mod+Shift+5" = "window-move-to-workspace:5";
-    "Mod+Shift+6" = "window-move-to-workspace:6";
-    "Mod+Shift+7" = "window-move-to-workspace:7";
-    "Mod+Shift+8" = "window-move-to-workspace:8";
-    "Mod+Shift+9" = "window-move-to-workspace:9";
+    "Mod+Shift+1" = "window-move-to-workspace 1";
+    "Mod+Shift+2" = "window-move-to-workspace 2";
+    "Mod+Shift+3" = "window-move-to-workspace 3";
+    "Mod+Shift+4" = "window-move-to-workspace 4";
+    "Mod+Shift+5" = "window-move-to-workspace 5";
+    "Mod+Shift+6" = "window-move-to-workspace 6";
+    "Mod+Shift+7" = "window-move-to-workspace 7";
+    "Mod+Shift+8" = "window-move-to-workspace 8";
+    "Mod+Shift+9" = "window-move-to-workspace 9";
     "Mod+WheelUp" = "window-focus-left";
     "Mod+WheelDown" = "window-focus-right";
     "Mod+Shift+WheelUp" = "column-move-left";
@@ -120,7 +121,10 @@ in
           enable = true;
 
           settings = {
-            general.autostart = [ "noctalia" ];
+            general.autostart = [
+              "noctalia"
+              "vesktop"
+            ];
             colors = {
               background = "#16161DF0";
               text_primary = "#E0DEF4FF";

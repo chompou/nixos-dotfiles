@@ -90,6 +90,7 @@
         prismlauncher
         vivaldi
         pinta
+        satty
       ];
 
       fonts.packages = with pkgs; [
