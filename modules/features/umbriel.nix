@@ -20,6 +20,14 @@ let
     };
   };
 
+  window_rules = [
+    {
+      match.app_id = "^steam_app_[0-9]+$";
+      default_workspace = 4;
+      default_fullscreen = true;
+    }
+  ];
+
   baseKeybinds = {
     "Mod+T" = "spawn ghostty";
     "Mod+E" = "spawn emacs";
@@ -199,6 +207,8 @@ in
             output = outputs;
 
             keybinds = baseKeybinds;
+
+            window_rule = window_rules;
           };
         };
       };
