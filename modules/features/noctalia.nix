@@ -1,13 +1,15 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.nixosModules.noctalia =
     { inputs, ... }:
     {
-      imports = [ inputs.noctalia.hjemModules.default ];
+      imports = [
+        inputs.noctalia.hjemModules.default
+        inputs.noctalia.nixosModules.default
+      ];
 
-      programs.noctalia = {
+      hjem.users.chompouprograms.noctalia = {
         enable = true;
-        recommendedServices.enable = true;
 
         settings = {
           bar = {

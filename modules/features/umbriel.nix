@@ -100,15 +100,20 @@ let
 in
 {
 
-  imports = [ inputs.umbriel.hjemModules.default ];
-
-  services.displayManager.defaultSession = "umbriel";
-
   flake.nixosModules.umbriel =
-    { ... }:
+    { inputs, ... }:
+
     {
-      programs.umbriel = {
+      imports = [
+        inputs.umbriel.hjemModules.default
+        inputs.umbriel.nixosModules.default
+      ];
+
+      services.displayManager.defaultSession = "umbriel";
+
+      hjem.users.chompou.programs.umbriel = {
         enable = true;
+
         settings = {
           general.autostart = [ "noctalia" ];
           colors = {
@@ -176,15 +181,15 @@ in
               sensitivity = 0.0;
               scroll_wheel_step = 60;
             };
+          };
 
-            output = outputs;
+          output = outputs;
 
-            keybinds = baseKeybinds;
+          keybinds = baseKeybinds;
 
-            focus = {
-              follows_mouse = true;
-              follows_mouse_max_scroll = 0.0;
-            };
+          focus = {
+            follows_mouse = true;
+            follows_mouse_max_scroll = 0.0;
           };
         };
       };
