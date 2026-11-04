@@ -101,95 +101,100 @@ in
 {
 
   flake.nixosModules.umbriel =
-    { inputs, ... }:
-
+    { ... }:
     {
       imports = [
-        inputs.umbriel.hjemModules.default
         inputs.umbriel.nixosModules.default
       ];
 
+      programs.umbriel.enable = true;
+
       services.displayManager.defaultSession = "umbriel";
 
-      hjem.users.chompou.programs.umbriel = {
-        enable = true;
+      hjem = {
+        extraModules = [
+          inputs.umbriel.hjemModules.default
+        ];
 
-        settings = {
-          general.autostart = [ "noctalia" ];
-          colors = {
-            background = "#16161DF0";
-            text_primary = "#E0DEF4FF";
-            text_muted = "#908CAAFF";
-            accent_primary = "#9CCFD8FF";
-            accent_secondary = "#31748FFF";
-            warning = "#F6C177FF";
-            error = "#EB6F92FF";
-            insert_hint = "#31748F80";
-            backdrop = "#000000FF";
-            shadow = "#00000088";
-            border = {
-              focused = "#9CCFD8FF";
-              unfocused = "#524F67FF";
-              outer = "#00000000";
-            };
-            overview = {
-              background_tint = "#524F6788";
-              workspace_background = "#00000044";
-            };
-          };
+        users.chompou.programs.umbriel = {
+          enable = true;
 
-          appearance = {
-            prefer_no_csd = true;
-            border_width = 1;
-            outer_border_width = 0;
-            corner_radius = 16;
-            blur = {
-              enabled = true;
-              optimized = true;
-              passes = 2;
-              radius = 5;
-              noise = 0.03;
-              brightness = 0.9;
-              contrast = 0.9;
-              saturation = 1.0;
+          settings = {
+            general.autostart = [ "noctalia" ];
+            colors = {
+              background = "#16161DF0";
+              text_primary = "#E0DEF4FF";
+              text_muted = "#908CAAFF";
+              accent_primary = "#9CCFD8FF";
+              accent_secondary = "#31748FFF";
+              warning = "#F6C177FF";
+              error = "#EB6F92FF";
+              insert_hint = "#31748F80";
+              backdrop = "#000000FF";
+              shadow = "#00000088";
+              border = {
+                focused = "#9CCFD8FF";
+                unfocused = "#524F67FF";
+                outer = "#00000000";
+              };
+              overview = {
+                background_tint = "#524F6788";
+                workspace_background = "#00000044";
+              };
             };
-            shadow = {
-              enabled = true;
-              softness = 20;
-              offset_x = 0;
-              offset_y = 10;
+
+            appearance = {
+              prefer_no_csd = true;
+              border_width = 1;
+              outer_border_width = 0;
+              corner_radius = 16;
+              blur = {
+                enabled = true;
+                optimized = true;
+                passes = 2;
+                radius = 5;
+                noise = 0.03;
+                brightness = 0.9;
+                contrast = 0.9;
+                saturation = 1.0;
+              };
+              shadow = {
+                enabled = true;
+                softness = 20;
+                offset_x = 0;
+                offset_y = 10;
+              };
             };
-          };
 
-          layout = {
-            mode = "scrolling";
-            gap = 16;
-            extent_presets = [
-              0.333
-              0.5
-              0.667
-            ];
-            scrolling = {
-              default_extent_fraction = 1.0;
-              center_underfull_strip = true;
+            layout = {
+              mode = "scrolling";
+              gap = 16;
+              extent_presets = [
+                0.333
+                0.5
+                0.667
+              ];
+              scrolling = {
+                default_extent_fraction = 1.0;
+                center_underfull_strip = true;
+              };
             };
-          };
-          input = {
-            keyboard.layout = "no";
-            mouse = {
-              accel_profile = "flat";
-              sensitivity = 0.0;
-              scroll_wheel_step = 60;
+            input = {
+              keyboard.layout = "no";
+              mouse = {
+                accel_profile = "flat";
+                sensitivity = 0.0;
+                scroll_wheel_step = 60;
+              };
+              focus = {
+                follows_mouse = true;
+                follows_mouse_max_scroll = 0.0;
+              };
             };
-          };
 
-          output = outputs;
+            output = outputs;
 
-          keybinds = baseKeybinds;
-
-          focus = {
-            follows_mouse = true;
-            follows_mouse_max_scroll = 0.0;
+            keybinds = baseKeybinds;
           };
         };
       };
