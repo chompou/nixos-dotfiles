@@ -47,7 +47,6 @@ let
     "Mod+X" = "spawn noctalia msg bar-toggle";
     "Mod+Shift+W" = "spawn noctalia msg desktop-widgets-toggle-edit";
     "Mod+Shift+T" = "spawn noctalia msg panel-toggle test";
-    "Mod+Shift+E" = "session-quit skip-confirmation";
     "Mod+Q" = {
       action = "window-close";
       repeat = false;
