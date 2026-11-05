@@ -179,7 +179,7 @@ in
 
             layout = {
               mode = "scrolling";
-              gap = 16;
+              gap = 10;
               extent_presets = [
                 0.333
                 0.5
