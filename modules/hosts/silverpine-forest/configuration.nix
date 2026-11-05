@@ -10,13 +10,14 @@
       imports = [
         self.nixosModules.silverpineHardware
         self.nixosModules.silverpineBoot
-        self.nixosModules.niri
         self.nixosModules.users
         self.nixosModules.passwordManager
         self.nixosModules.fish
         self.nixosModules.nvidia
         self.nixosModules.silverpineHjem
+        self.nixosModules.noctalia
         self.nixosModules.ghostty
+        self.nixosModules.umbriel
       ];
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -83,12 +84,13 @@
         godot
         nixd
         aspell
+        godot
 
         osu-lazer-bin
-        lutris
         prismlauncher
         vivaldi
         pinta
+        satty
       ];
 
       fonts.packages = with pkgs; [
@@ -102,7 +104,7 @@
         enable = true;
         clean = {
           enable = true;
-          extraArgs = "--keep 5";
+          extraArgs = "--keep 20";
         };
       };
 
